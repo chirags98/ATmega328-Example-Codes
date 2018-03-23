@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000084  00000000  00000000  000014b0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000003c2  00000000  00000000  00001534  2**0
+ 10 .debug_str    00000436  00000000  00000000  00001534  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000056  00000000  00000000  000018f6  2**0
+ 11 .debug_loc    00000056  00000000  00000000  0000196a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000030  00000000  00000000  0000194c  2**0
+ 12 .debug_ranges 00000030  00000000  00000000  000019c0  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -123,8 +123,8 @@ int main(void)
 
 	__builtin_avr_delay_cycles(__ticks_dc);
   a6:	2f ef       	ldi	r18, 0xFF	; 255
-  a8:	3f e4       	ldi	r19, 0x4F	; 79
-  aa:	93 ec       	ldi	r25, 0xC3	; 195
+  a8:	33 ed       	ldi	r19, 0xD3	; 211
+  aa:	90 e3       	ldi	r25, 0x30	; 48
   ac:	21 50       	subi	r18, 0x01	; 1
   ae:	30 40       	sbci	r19, 0x00	; 0
   b0:	90 40       	sbci	r25, 0x00	; 0
@@ -134,36 +134,20 @@ int main(void)
   b8:	f5 cf       	rjmp	.-22     	; 0xa4 <main+0xa>
 
 000000ba <uart0_init>:
-// actual baud rate:9600 (error 0.2%)
-// char size: 8 bit
-// parity: Disabled
-void uart0_init(void)
-{
-	UCSR0B = 0x00; //disable while setting baud rate
   ba:	e1 ec       	ldi	r30, 0xC1	; 193
   bc:	f0 e0       	ldi	r31, 0x00	; 0
   be:	10 82       	st	Z, r1
-	UCSR0A = 0x00;
   c0:	10 92 c0 00 	sts	0x00C0, r1	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7e00c0>
-	UCSR0C = 0x06;
   c4:	86 e0       	ldi	r24, 0x06	; 6
   c6:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7e00c2>
-	UBRR0L = 0x67; //set baud rate lo //UBRR0 = 103
   ca:	87 e6       	ldi	r24, 0x67	; 103
   cc:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7e00c4>
-	UBRR0H = 0x00; //set baud rate hi
   d0:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7e00c5>
-	UCSR0B = 0x98;
   d4:	88 e9       	ldi	r24, 0x98	; 152
   d6:	80 83       	st	Z, r24
   d8:	08 95       	ret
 
 000000da <__vector_18>:
-}
-
-
-ISR(USART_RX_vect) 		// ISR for receive complete interrupt
-{
   da:	1f 92       	push	r1
   dc:	0f 92       	push	r0
   de:	0f b6       	in	r0, 0x3f	; 63
@@ -172,14 +156,11 @@ ISR(USART_RX_vect) 		// ISR for receive complete interrupt
   e4:	8f 93       	push	r24
   e6:	ef 93       	push	r30
   e8:	ff 93       	push	r31
-	data = UDR0; 				//making copy of data from UDR1 in 'data' variable
   ea:	e6 ec       	ldi	r30, 0xC6	; 198
   ec:	f0 e0       	ldi	r31, 0x00	; 0
   ee:	80 81       	ld	r24, Z
   f0:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <_edata>
-	UDR0 = data; 				//echo data back to PC
   f4:	80 83       	st	Z, r24
-}
   f6:	ff 91       	pop	r31
   f8:	ef 91       	pop	r30
   fa:	8f 91       	pop	r24

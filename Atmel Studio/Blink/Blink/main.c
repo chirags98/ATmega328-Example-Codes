@@ -11,13 +11,13 @@
 int main(void)
 {
 	
-	DDRD = DDRD | 0x80;		//Setting PORTD 7 as output
-	PORTD = PORTD & 0x80;	//Setting PORTD 7 logic low to turnoff led
+	DDRB = DDRB | 0x20;		//Setting PORTB 5 as output
+	PORTB = PORTB & 0x20;	//Setting PORTB 5 logic low to turnoff led
 
 	while (1)
 	{
-		PORTD = PORTD ^ 0x80;
-		_delay_ms(2000);
+		PORTB = PORTB ^ 0x20;
+		_delay_ms(1000);
 	}
 }
 

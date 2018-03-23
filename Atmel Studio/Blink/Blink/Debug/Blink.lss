@@ -3,11 +3,11 @@ Blink.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000000fa  2**0
+  0 .data         00000000  00800100  00800100  000000fc  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000000a6  00000000  00000000  00000054  2**1
+  1 .text         000000a8  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      00000030  00000000  00000000  000000fa  2**0
+  2 .comment      00000030  00000000  00000000  000000fc  2**0
                   CONTENTS, READONLY
   3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000012c  2**2
                   CONTENTS, READONLY
@@ -17,13 +17,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   6 .debug_abbrev 00000667  00000000  00000000  0000088b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000257  00000000  00000000  00000ef2  2**0
+  7 .debug_line   0000025f  00000000  00000000  00000ef2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000024  00000000  00000000  0000114c  2**2
+  8 .debug_frame  00000024  00000000  00000000  00001154  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000387  00000000  00000000  00001170  2**0
+  9 .debug_str    000003b4  00000000  00000000  00001178  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000010  00000000  00000000  000014f7  2**0
+ 10 .debug_ranges 00000010  00000000  00000000  0000152c  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -64,7 +64,7 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
   74:	0e 94 40 00 	call	0x80	; 0x80 <main>
-  78:	0c 94 51 00 	jmp	0xa2	; 0xa2 <_exit>
+  78:	0c 94 52 00 	jmp	0xa4	; 0xa4 <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -75,38 +75,39 @@ Disassembly of section .text:
 int main(void)
 {
 	
-	DDRD = DDRD | 0x80;		//Setting PORTD 7 as output
-  80:	57 9a       	sbi	0x0a, 7	; 10
-	PORTD = PORTD & 0x80;	//Setting PORTD 7 logic low to turnoff led
-  82:	8b b1       	in	r24, 0x0b	; 11
-  84:	80 78       	andi	r24, 0x80	; 128
-  86:	8b b9       	out	0x0b, r24	; 11
+	DDRB = DDRB | 0x20;		//Setting PORTD 7 as output
+  80:	25 9a       	sbi	0x04, 5	; 4
+	PORTB = PORTB & 0x20;	//Setting PORTD 7 logic low to turnoff led
+  82:	85 b1       	in	r24, 0x05	; 5
+  84:	80 72       	andi	r24, 0x20	; 32
+  86:	85 b9       	out	0x05, r24	; 5
 
 	while (1)
 	{
-		PORTD = PORTD ^ 0x80;
-  88:	8b b1       	in	r24, 0x0b	; 11
-  8a:	80 58       	subi	r24, 0x80	; 128
-  8c:	8b b9       	out	0x0b, r24	; 11
+		PORTB = PORTB ^ 0x20;
+  88:	90 e2       	ldi	r25, 0x20	; 32
+  8a:	85 b1       	in	r24, 0x05	; 5
+  8c:	89 27       	eor	r24, r25
+  8e:	85 b9       	out	0x05, r24	; 5
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  8e:	2f ef       	ldi	r18, 0xFF	; 255
-  90:	87 ea       	ldi	r24, 0xA7	; 167
-  92:	91 e6       	ldi	r25, 0x61	; 97
-  94:	21 50       	subi	r18, 0x01	; 1
-  96:	80 40       	sbci	r24, 0x00	; 0
-  98:	90 40       	sbci	r25, 0x00	; 0
-  9a:	e1 f7       	brne	.-8      	; 0x94 <main+0x14>
-  9c:	00 c0       	rjmp	.+0      	; 0x9e <main+0x1e>
-  9e:	00 00       	nop
-  a0:	f3 cf       	rjmp	.-26     	; 0x88 <main+0x8>
+  90:	2f ef       	ldi	r18, 0xFF	; 255
+  92:	33 ed       	ldi	r19, 0xD3	; 211
+  94:	80 e3       	ldi	r24, 0x30	; 48
+  96:	21 50       	subi	r18, 0x01	; 1
+  98:	30 40       	sbci	r19, 0x00	; 0
+  9a:	80 40       	sbci	r24, 0x00	; 0
+  9c:	e1 f7       	brne	.-8      	; 0x96 <main+0x16>
+  9e:	00 c0       	rjmp	.+0      	; 0xa0 <main+0x20>
+  a0:	00 00       	nop
+  a2:	f3 cf       	rjmp	.-26     	; 0x8a <main+0xa>
 
-000000a2 <_exit>:
-  a2:	f8 94       	cli
+000000a4 <_exit>:
+  a4:	f8 94       	cli
 
-000000a4 <__stop_program>:
-  a4:	ff cf       	rjmp	.-2      	; 0xa4 <__stop_program>
+000000a6 <__stop_program>:
+  a6:	ff cf       	rjmp	.-2      	; 0xa6 <__stop_program>

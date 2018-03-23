@@ -20,6 +20,6 @@ int main(void)
 	while(1)
 	{
 		UDR0 = 'K';
-		_delay_ms(4000);
+		_delay_ms(1000);
 	}
 }
