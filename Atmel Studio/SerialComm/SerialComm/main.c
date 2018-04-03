@@ -5,6 +5,14 @@
 #include<util/delay.h>
 #include "Serial.h"
 
+/*
+-Serial baud rate:9600
+-Sends character 'K' every second
+-Echos all characters given serially 
+*/
+
+unsigned char data; //to store received data from UDR
+
 //Function To Initialize all The Devices
 void init_devices()
 {
@@ -22,4 +30,10 @@ int main(void)
 		UDR0 = 'K';
 		_delay_ms(1000);
 	}
+}
+
+ISR(USART_RX_vect) 		// ISR for receive complete interrupt
+{
+	data = UDR0; 				//making copy of data from UDR1 in 'data' variable
+	UDR0 = data; 				//echo data back to PC
 }

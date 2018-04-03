@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000144  00000000  00000000  00002290  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000481  00000000  00000000  000023d4  2**0
+ 10 .debug_str    000004b4  00000000  00000000  000023d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000083a  00000000  00000000  00002855  2**0
+ 11 .debug_loc    0000083a  00000000  00000000  00002888  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000080  00000000  00000000  0000308f  2**0
+ 12 .debug_ranges 00000080  00000000  00000000  000030c2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -310,7 +310,6 @@ static void lcd_set_4bit()
 
 	cbit(lcd_port,RS);				//RS=0 --- Command Input
  21e:	5f 98       	cbi	0x0b, 7	; 11
-	//lcd_port = 0x30;				//Sending 3 (0011 0000)
 	lcd_port = 0x30;				//Sending 3 (0011 0000)
  220:	80 e3       	ldi	r24, 0x30	; 48
  222:	8b b9       	out	0x0b, r24	; 11

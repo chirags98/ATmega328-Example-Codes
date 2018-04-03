@@ -5,6 +5,10 @@
  * Author : Chirag
  */ 
 
+/*
+Displays "Hello World" on the onboard LCD
+*/
+
 #define F_CPU 16000000
 #include <avr/io.h>
 #include <util/delay.h>

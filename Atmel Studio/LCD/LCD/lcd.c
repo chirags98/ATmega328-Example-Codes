@@ -1,8 +1,6 @@
 /*
-* Team Id: LM438
 * Author: Chirag Shah
 * Filename: LCD.c
-* Theme: Launch a module
 * Functions:
 		lcd_start(void),
 		lcd_port_config (void),
@@ -65,7 +63,6 @@ static void lcd_set_4bit()
 	_delay_ms(1);
 
 	cbit(lcd_port,RS);				//RS=0 --- Command Input
-	//lcd_port = 0x30;				//Sending 3 (0011 0000)
 	lcd_port = 0x30;				//Sending 3 (0011 0000)
 	sbit(lcd_port,EN);				//Set Enable Pin
 	_delay_ms(5);					//Delay
