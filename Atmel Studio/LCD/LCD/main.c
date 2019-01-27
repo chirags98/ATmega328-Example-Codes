@@ -33,4 +33,8 @@ int main(void)
 	init_devices();
 	
 	lcd_string2(1, 1, "Hello World");
+	
+	while (1)
+	{
+	}
 }

@@ -5,9 +5,9 @@
 dht DHT;
 
 // if you require to change the pin number, Edit the pin with your arduino pin.
-#define DHT11_Data 9
-#define DHT11_Power 8
-#define DHT11_GND 10
+#define DHT11_Data 9	//PB1
+#define DHT11_Power 8	//PB0
+#define DHT11_GND 10	//PB2
 
 // initialize the library by associating any needed LCD interface pin
 // with the arduino pin number it is connected to
