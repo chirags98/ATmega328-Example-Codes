@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>3c2e13bd-f80c-4fcb-9434-32ef5b367838</ProjectGuid>
+    <avrdevice>atmega328p</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\Program Files (x86)\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.35.1" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\Wire</Value>
+      <Value>..\include\libraries\Wire\utility</Value>
+      <Value>..\include\libraries\SSD1306Ascii</Value>
+      <Value>..\include\libraries\SSD1306Ascii\fonts</Value>
+      <Value>..\include\libraries\SSD1306Ascii\utility</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\Wire</Value>
+      <Value>..\include\libraries\Wire\utility</Value>
+      <Value>..\include\libraries\SSD1306Ascii</Value>
+      <Value>..\include\libraries\SSD1306Ascii\fonts</Value>
+      <Value>..\include\libraries\SSD1306Ascii\utility</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\Wire</Value>
+      <Value>..\include\libraries\Wire\utility</Value>
+      <Value>..\include\libraries\SSD1306Ascii</Value>
+      <Value>..\include\libraries\SSD1306Ascii\fonts</Value>
+      <Value>..\include\libraries\SSD1306Ascii\utility</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\Wire</Value>
+      <Value>..\include\libraries\Wire\utility</Value>
+      <Value>..\include\libraries\SSD1306Ascii</Value>
+      <Value>..\include\libraries\SSD1306Ascii\fonts</Value>
+      <Value>..\include\libraries\SSD1306Ascii\utility</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\new.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Adafruit5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\allFonts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Arial14.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Arial_bold_14.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\CalBlk36.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri10.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri11.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri11_bold.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri11_italic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri14.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Callibri15.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\CalLite24.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Cooper19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Cooper21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Cooper26.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Corsiva_12.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\cp437font8x8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\fixednums15x31.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\fixednums7x15.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\fixednums8x16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\fixed_bold10x15.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\font5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\font8x8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Iain5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\lcd5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\lcdnums12x16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\lcdnums14x24.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\newbasic3x5.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Roosewood22.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Roosewood26.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Stang5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\System5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\SystemFont5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\TimesNewRoman13.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\TimesNewRoman13_italic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\TimesNewRoman16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\TimesNewRoman16_bold.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\TimesNewRoman16_italic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\utf8font10x16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Verdana12.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Verdana12_bold.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Verdana12_italic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Verdana_digits_24.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\Wendy3x5.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\X11fixed7x14.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\X11fixed7x14B.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\fonts\ZevvPeep8x16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306Ascii.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306AsciiAvrI2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306AsciiSoftSpi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306AsciiSpi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306AsciiWire.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\SSD1306init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\utility\AvrI2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SSD1306Ascii\utility\DigitalOutput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\utility\twi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\Wire.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\wiring_pulse.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SSD1306Ascii\SSD1306Ascii.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\utility\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\Wire.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\SSD1306Ascii\" />
+    <Folder Include="include\libraries\SSD1306Ascii\fonts\" />
+    <Folder Include="include\libraries\SSD1306Ascii\utility\" />
+    <Folder Include="include\libraries\Wire\" />
+    <Folder Include="include\libraries\Wire\utility\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="include\variants\standard\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\SSD1306Ascii\" />
+    <Folder Include="src\libraries\Wire\" />
+    <Folder Include="src\libraries\Wire\utility\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
