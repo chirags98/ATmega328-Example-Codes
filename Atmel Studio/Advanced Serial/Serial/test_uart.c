@@ -19,7 +19,7 @@ DESCRIPTION:
 #include "uart.h"
 
 /* define CPU frequency in Hz in Makefile */
-#ifndef F_CPU 16000000
+#ifndef F_CPU 
 #error "F_CPU undefined, please define CPU frequency in Hz in Makefile"
 #endif
 
